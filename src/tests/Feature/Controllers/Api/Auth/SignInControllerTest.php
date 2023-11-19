@@ -70,7 +70,7 @@ class SignInControllerTest extends TestCase
         $dto->password = 'password';
 
         // Mock the AuthenticateService and set expectations
-        $this->mock(AuthenticateService::class, function (MockInterface $mock) use ($dto) {
+        $this->mock(AuthenticateService::class, function (MockInterface $mock) {
             $mock->shouldReceive('authenticateViaCredentials')
                 ->once()
                 ->andThrow(AuthenticateFailedException::class);

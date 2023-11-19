@@ -25,7 +25,7 @@ class ProfileControllerTest extends TestCase
         $authenticateResult = $authenticateService->authenticateUser($user);
 
         // Send a GET request to the profile API endpoint
-        $response = $this->withHeader('Authorization', 'Bearer ' . $authenticateResult->token)
+        $response = $this->withHeader('Authorization', 'Bearer '.$authenticateResult->token)
             ->getJson(route('api.user'));
 
         // Assert that the response has a 200 OK status code

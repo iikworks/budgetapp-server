@@ -15,14 +15,13 @@ class SignInController extends Controller
 {
     public function __construct(
         private readonly AuthenticateService $service,
-    )
-    {
+    ) {
     }
 
     /**
      * Handles the Authentication via credentials.
      *
-     * @param SignInRequest $request The Sign In request object containing the credentials.
+     * @param  SignInRequest  $request The Sign In request object containing the credentials.
      * @return SignInResultResource|JsonResponse The Sign In result with a token
      * and a user resource or a JSON response with error.
      */

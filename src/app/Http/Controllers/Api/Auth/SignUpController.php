@@ -14,14 +14,13 @@ class SignUpController extends Controller
     public function __construct(
         private readonly UserService $userService,
         private readonly AuthenticateService $authenticateService,
-    )
-    {
+    ) {
     }
 
     /**
      * Handles the user's registration.
      *
-     * @param SignUpRequest $request The Sign-Up request object containing the user's data.
+     * @param  SignUpRequest  $request The Sign-Up request object containing the user's data.
      * @return SignInResultResource The Sign In result with a token and a user resource.
      */
     public function handle(SignUpRequest $request): SignInResultResource

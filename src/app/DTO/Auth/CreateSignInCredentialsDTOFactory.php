@@ -9,7 +9,7 @@ readonly class CreateSignInCredentialsDTOFactory
     /**
      * Creates a new SignInCredentialsDTO object from a SignInRequest object.
      *
-     * @param SignInRequest $request The Request object.
+     * @param  SignInRequest  $request The Request object.
      * @return SignInCredentialsDTO The newly created SignInCredentialsDTO object.
      */
     public static function fromRequest(SignInRequest $request): SignInCredentialsDTO

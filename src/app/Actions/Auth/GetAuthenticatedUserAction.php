@@ -12,12 +12,13 @@ readonly class GetAuthenticatedUserAction
      * Returns the current authenticated user.
      *
      * @return User The authenticated user.
+     *
      * @throws UnauthorizedException If the user is not authenticated.
      */
     public function __invoke(): User
     {
         $user = Auth::user();
-        if (!$user) {
+        if (! $user) {
             throw new UnauthorizedException('User is not authenticated.');
         }
 

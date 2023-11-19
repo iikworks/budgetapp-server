@@ -7,5 +7,6 @@ use App\Models\User;
 class SignInResultDTO
 {
     public string $token;
+
     public User $user;
 }

@@ -5,7 +5,9 @@ namespace App\DTO\User;
 class StoreUserDTO
 {
     public string $firstName;
+
     public string $phoneNumber;
+
     public string $password;
 
     public function toArray(): array

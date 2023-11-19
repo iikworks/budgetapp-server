@@ -13,7 +13,7 @@ class AuthenticateService
     /**
      * Authenticates a user.
      *
-     * @param User $user The user to be authenticated.
+     * @param  User  $user The user to be authenticated.
      * @return SignInResultDTO The SignInResultDTO containing the authentication token and user details.
      */
     public function authenticateUser(User $user): SignInResultDTO
@@ -28,9 +28,10 @@ class AuthenticateService
     /**
      * Authenticate a user via credentials.
      *
-     * @param SignInCredentialsDTO $dto The data transfer object containing the user's credentials.
-     * @throws AuthenticateFailedException Thrown when the authentication fails.
+     * @param  SignInCredentialsDTO  $dto The data transfer object containing the user's credentials.
      * @return SignInResultDTO The result of the authentication process.
+     *
+     * @throws AuthenticateFailedException Thrown when the authentication fails.
      */
     public function authenticateViaCredentials(SignInCredentialsDTO $dto): SignInResultDTO
     {
@@ -50,7 +51,7 @@ class AuthenticateService
     /**
      * Creates a new access token for a user.
      *
-     * @param User $user The user for whom the access token is created.
+     * @param  User  $user The user for whom the access token is created.
      * @return NewAccessToken The newly created access token.
      */
     private function createTokenForUser(User $user): NewAccessToken
