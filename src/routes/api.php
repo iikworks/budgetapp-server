@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Auth\SignInController;
 use App\Http\Controllers\Api\Auth\SignUpController;
 use App\Http\Controllers\Api\ProfileController;
+use App\Http\Controllers\Api\ProfileImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,5 +23,13 @@ Route::prefix('/auth')->group(function () {
 });
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/user', [ProfileController::class, 'profile'])->name('api.user');
+    Route::prefix('/user')->group(function () {
+        Route::get('/', [ProfileController::class, 'profile'])->name('api.user');
+        Route::patch('/', [ProfileController::class, 'update'])->name('api.user.update');
+
+        Route::prefix('/image')->group(function () {
+            Route::patch('/', [ProfileImageController::class, 'update'])->name('api.user.image.update');
+            Route::delete('/', [ProfileImageController::class, 'destroy'])->name('api.user.image.destroy');
+        });
+    });
 });

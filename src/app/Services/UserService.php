@@ -29,7 +29,10 @@ class UserService
      */
     public function update(User $user, UpdateUserDTO $dto): User
     {
-        $user->update($dto->toArray());
+        $user->phone_number = $dto->phoneNumber ?? $user->phone_number;
+        $user->first_name = $dto->firstName ?? $user->first_name;
+        $user->password = $dto->password ?? $user->password;
+        $user->save();
 
         return $user;
     }
