@@ -8,7 +8,6 @@ Copy the **.env.example** file to **.env** and customize it. The **APP_KEY** sec
 #### Installing dependencies
 ```
 bin/composer install
-bin/npm install
 ```
 #### Running migrations
 To run migrations, you need to start the app.
@@ -29,7 +28,6 @@ Run command:
 bin/artisan key:generate --show
 ```
 Then enter the generated key in the .env file in the **APP_KEY** section
-
 ## Running
 Run command:
 ```
@@ -47,19 +45,6 @@ After an update (e.g. git pull) you will need to rebuild the containers on start
 ```
 bin/up --build
 ```
-
-## Running frontend for dev
-Run command:
-```
-bin/npm run dev
-```
-
-## Building frontend
-Run command:
-```
-bin/npm run build
-```
-
 ## Running tests
 To run tests, you need to start the app.
 ```
@@ -88,12 +73,6 @@ Running laravel pint.
 
 ```
 bin/pint
-```
-### NPM
-Running npm for installing packages, running in dev mode or building.
-
-```
-bin/npm <command>
 ```
 ### Up
 Launches all the necessary containers for the application to work.
